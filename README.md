@@ -1,5 +1,6 @@
 # SinAck
-Recusants be dealt with the wrath of gold
+
+Intelligent network traffic analysis using machine learning
 
 webpage in flask
 - start stop scanning network button

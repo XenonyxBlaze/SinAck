@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SinAck</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SinAck</title>
+
+  <link rel = "stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+
 </head>
+
 <body>
-    <h1>Constant vigilance</h1>
+  
+  <header>
+    SinAck
+  </header>
+
+  <div id="main">
+    <div class="panel">
+      
+      <button class="panelbtn" onclick="showContent('rts')">Real Time Scan</button>
+      <button class="panelbtn" onclick="showContent('ih')">Incident History</button>
+      <button class="panelbtn" onclick="showContent('adv')" disabled>Advanced</button>
+      
+    </div>
+
+      
+    <div class="content" id="rts">
+
+      <h1>Real Time Scan</h1>
+      <p>Scan your network in real time</p>
+      <button onclick="togglebtn()">
+        <a href="{{scanlink}}">
+          {{ scanbtn }}
+        </a>
+      </button>
+    </div>
+
+    <div class="content" id="ih">
+      <h1>Incident History</h1>
+      <p>View your incident history</p>
+      
+    </div>
+
+    <div class="content" id="adv">
+      <h1>Advanced</h1>
+      <p>Advanced settings</p>
+      
+    </div>
+      
     
+  </div>
+<script>
+  function showContent(id) {
+    console.log(id);
+    var content = document.getElementsByClassName('content');
+    for (var i = 0; i < content.length; i++) {
+      content[i].style.display = 'none';
+    }
+    document.getElementById(id).style.display = 'block';
+  }
+  document.getElementById('rts').style.display = 'block';
+</script>
+
 </body>
 </html>

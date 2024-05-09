@@ -3,7 +3,7 @@ from flask_cors import CORS
 
 import os
 
-import goodsniffer
+import okay
 
 import multiprocessing
 
@@ -20,15 +20,17 @@ app.config.update(
     SECRET_KEY='dev'
 )
 
+def get_incidents():
+    return None
+
 @app.route('/')
 def index_function():
-    return render_template('index.html', scanbtn=scan_status, scanlink=scan_link)
+    return render_template('index.html', scanbtn=scan_status, scanlink=scan_link, incidents=get_incidents())
     
-
 @app.route('/scan')
 def scan_function():
     global snifferProcess
-    snifferProcess = multiprocessing.Process(target=goodsniffer.main)
+    snifferProcess = multiprocessing.Process(target=okay.main)
     snifferProcess.start()
     global scan_status
     global scan_link

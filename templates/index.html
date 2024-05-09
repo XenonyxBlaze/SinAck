@@ -39,8 +39,29 @@
 
     <div class="content" id="ih">
       <h1>Incident History</h1>
-      <p>View your incident history</p>
-      
+      <p>View detected incident reports</p>
+      <table>
+        <tr>
+          <th>Incident ID</th>
+          <th>Incident Type</th>
+          <th>Incident Time</th>
+          <th>Incident Description</th>
+        </tr>
+        {% if incidents == None %}
+        <tr>
+          <td colspan="4">No incidents found</td>
+        </tr>
+        {% else %}
+          {% for incident in incidents %}
+          <tr>
+            <td>{{ incident.id }}</td>
+            <td>{{ incident.type }}</td>
+            <td>{{ incident.time }}</td>
+            <td>{{ incident.description }}</td>
+          </tr>
+          {% endfor %}
+          
+        {% endif %}
     </div>
 
     <div class="content" id="adv">

@@ -81,3 +81,41 @@ body{
     color: black;
     text-decoration: none;
 }
+
+#ih table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#ih th {
+    background-color: #333;
+    border: 1px solid white;
+    color: white;
+    padding: 1rem;
+}
+
+#ih td {
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+}
+
+#ih tr:nth-child(even) {
+    background-color: #666;
+}
+
+#ih tr:nth-child(odd) {
+    background-color: #555;
+}
+
+#ih tr:hover {
+    background-color: #777;
+}
+
+#ih button {
+    padding: 1rem;
+    background-color:cornflowerblue;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}

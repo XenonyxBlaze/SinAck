@@ -1,6 +1,9 @@
-/goodsniffer.py
 __pycache__/
 __pycache__/*
+
+/goodsniffer.py
 /okay.py
+
 *.pcap
 *.csv
+*.pkl

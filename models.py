@@ -14,7 +14,7 @@ def load_models():
 
 def make_pred(file):
     df = pd.read_csv(file,engine="pyarrow")
-    
+
     dos_pred = dos_model.predict(df)
     dos_anomalies = ['DoS Slowloris', 'DoS GoldenEye', 'DoS Hulk', 'DDoS-LOIC-HTTP', 'DDoS-LOIC-UDP', 'DDoS-HOIC']
     anomaly_found = [x in dos_pred for x in dos_anomalies]
@@ -35,3 +35,4 @@ def make_pred(file):
     if ('Infiltration - NMAP Portscan' in ps_pred):
         return "Port Scan"
     
+    return None

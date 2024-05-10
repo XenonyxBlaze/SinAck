@@ -38,6 +38,9 @@ def scan_function():
     global scan_link
     scan_status = "Stop Scan"
     scan_link = "/stopscan"
+
+    
+
     return app.redirect('/')
 
 @app.route('/stopscan')
@@ -48,11 +51,6 @@ def stop_scan():
     scan_status = "Start Scan"
     scan_link = "/scan"
     return app.redirect('/')
-
-# @app.route('/stopscan')
-# def stop_scan_function():
-
-
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80, threaded=True)

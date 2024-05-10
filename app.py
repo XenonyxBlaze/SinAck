@@ -2,10 +2,12 @@ from flask import Flask, render_template
 from flask_cors import CORS
 
 import os
+import multiprocessing
 
 import okay
+import models
 
-import multiprocessing
+models.load_models()
 
 app = Flask("SinAck") 
 CORS(app)
